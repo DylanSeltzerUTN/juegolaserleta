@@ -27,6 +27,7 @@ const levelConfigs = {
 
 
 
+
 let currentLevel = 1;
 const maxLevel = 10;
 const minLevel = 1;
