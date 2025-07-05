@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+}
+
+.cell {
+  border: 2px solid rgba(255, 255, 255, 0.925);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.laser-vertical,
+.laser-horizontal {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.laser-vertical {
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(255, 0, 0, 0.934);
+animation: moveLaserVertical 6s linear infinite alternate;
+
+}
+
+.laser-horizontal {
+  left: -10%;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.934);
+  display: none; /* por defecto oculta */
+}
+
+@keyframes moveLaserVertical {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+@keyframes moveLaserHorizontal {
+  0% { left: 0%; }
+  100% { left: 100%; }
+}
